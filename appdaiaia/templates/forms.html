@@ -1,0 +1,24 @@
+<h1>{{ type }} Beneficio</h1>
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>categoria:</label>
+    <input name="categoria" value="{{beneficios.categoria}}">
+  </div>
+
+  <div>
+    <label>intensidade:</label>
+    <input name="intensidade" value="{{beneficios.intensidade}}">
+  </div>
+
+  <div>
+    <label>melhoria:</label>
+    <input name="melhoria" value="{{beneficios.melhoria}}">
+  </div>
+
+  <div>
+    <label>como fazer:</label>
+    <input name="como_fazer" value="{{beneficios.como_fazer}}">
+  </div>
+  <input: type="submit" value="Registrar">
+</form>

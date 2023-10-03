@@ -1,0 +1,7 @@
+Voce tem certeza que deseja deletar "{{ beneficios.categoria}}"?
+
+<form>
+  {% csrf_token %}
+  <input type="submit" name= "confirm"value="Sim">
+  <input type="submit" value="Nao">
+</form>

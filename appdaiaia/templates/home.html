@@ -1,0 +1,67 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" conten  t="width=device-width">
+  <title>Minha Pagina</title>
+  <link href="{% static 'style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Sobre meu hobby favorito: Yoga</h1>
+  <h3>Feito por: Iasmim Carvalho Rangel</h3>
+
+  <p>
+    <b>A meditação e a yoga é uma forma de você preservar a sua saúde de forma alternativa.</b> A meditação é uma prática muito antiga vinda da <i>Yoga</i>, elas se compõem em várias religiões ocidentais como <u>budismo e hinduísmo</u> como uma forma de vida diferente, no qual nós que somos da cultura oriental não somos muito acostumados.<b>Dentro da Yoga e da meditação podemos criar métodos para sermos pessoas melhores:</b> um método muito eficaz nessas práticas é <i>equilibrar nossos chakras</i> que são centros de energia dentro do nosso corpo, eles representam a natureza do corpo humano desde o corpo <u>físico, mental e energético</u> cujo cada um tem uma função diferente.
+</p>
+
+<div class="center">
+    <div><img src="https://img.freepik.com/vetores-gratis/pacote-de-silhuetas-de-ioga-de-silhueta-de-meditacao_314614-1467.jpg?w=2000"width=400></div>
+  <div><img src="https://imageswscdn.wslojas.com.br/files/25105/7-pedras-chakras-734499.png"width=400></div>
+</div>
+
+ <h2>Beneficios da pratica de yoga:</h2> 
+  <!--<ol>
+    <li>Diminui a ansiedade</li>
+    <li>Promove condicionamento físico</li>
+    <li>Melhora o sono</li>
+    <li>Desenvolve seu foco e concentração</li> 
+  </ol>-->
+  <ol>
+    {% for beneficios in beneficios %}
+    <li>
+      {{beneficios.categoria}} 
+      <a href="/beneficios/update/{{beneficios.id}}"> Atualizar</a> 
+      <a href="/beneficios/delete/{{beneficios.id}}"> Remover</a>
+    </li>
+    {% endfor %}
+  </ol>
+
+  <a href="/beneficios">Adicionar Novo Beneficio</a>
+  
+
+ <h2>Alguns princípios da yoga:</h2> 
+  <!--<ul>
+    <li>Yamas - condutas éticas</li>
+    <li>Nyamas - observações pessoais</li>
+    <li>Ásana - prática de posturas</li>
+    <li>Pranayama - práticas de controle de respiração</li> 
+  </ul>-->
+<ul>
+  {% for principios in principios %}
+  <li>{{principios.tipo}}</li>
+  {% endfor %}
+</ul>
+
+<a href="/principios">Adicionar Novo Principio</a>
+
+  <h4> Tem curiosidade para saber mais sobre?</h4>
+  <a href="https://yogando.com.br/principios-basicos-do-yoga/" target="_blank">Clique aqui para uma introdução da yoga </a>
+
+
+</body>
+
+</html>
